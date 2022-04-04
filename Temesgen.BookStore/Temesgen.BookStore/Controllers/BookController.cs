@@ -16,19 +16,23 @@ namespace Temesgen.BookStore.Controllers
         {
             _bookRepository = new BookRepository();
         }
-        public List<BookModel> GetAllBooks()
+        public IActionResult GetAllBooks()
         {
-            return _bookRepository.GetAllBooks();
+            var data = _bookRepository.GetAllBooks();
+            return View();
         }
 
-        public BookModel GetBookById(int id)
+        public IActionResult GetBookById(int id)
         {
-            return _bookRepository.GetBookById(id);
+            var data = _bookRepository.GetBookById(id);
+
+            return View();
         }
 
-        public List<BookModel> SearchBook(string bookName, string authorName)
+        public IActionResult SearchBook(string bookName, string authorName)
         {
-            return _bookRepository.SearchBook(bookName, authorName);
+            var data = _bookRepository.SearchBook(bookName, authorName);
+            return View();
         }
     }
 }

@@ -8,13 +8,21 @@ namespace Temesgen.BookStore.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index()
+
+        public IActionResult Index()
         {
-            return "WebGentle";
+            return View();
         }
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+        
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
+
+        public IActionResult ContactUs()
+        {
+            return View();
+        }
     }
+
 }
